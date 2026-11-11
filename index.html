@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ta valise de maternité, prête en 5 minutes | Ma Valise Maternité</title>
+<meta name="description" content="Réponds à 3 questions et obtiens la liste de valise de maternité adaptée à ta naissance : saison, césarienne ou non, sein ou biberon.">
+<meta name="theme-color" content="#2F4A3A">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Ma Valise Maternité">
+<meta property="og:title" content="Ta valise de maternité, prête en 5 minutes. Rien d'oublié.">
+<meta property="og:description" content="3 questions, et ta liste s'adapte à ta naissance : saison, césarienne ou non, sein ou biberon. Gratuit pour commencer.">
+<meta property="og:url" content="https://ma-valise-maternite.vercel.app/">
+<meta property="og:image" content="https://ma-valise-maternite.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="marque" href="/" aria-label="Ma Valise Maternité, accueil">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="10" width="24" height="17" rx="5" fill="#2F4A3A"/><path d="M12 10V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3" fill="none" stroke="#2F4A3A" stroke-width="2.5"/><path d="M4 17h24" stroke="#B8643C" stroke-width="2" stroke-dasharray="2 2"/></svg>
+    Ma Valise Maternité
+  </a>
+
+  <!-- 1. Accueil -->
+  <section class="etape active" id="accueil">
+    <div class="hero">
+      <h1>Ta valise de maternité, prête en <em>5 minutes</em>. Rien d'oublié.</h1>
+      <p class="sous">Réponds à 3 questions : tu obtiens la liste adaptée à <strong>ta</strong> naissance. Saison, césarienne ou non, sein ou biberon.</p>
+      <button class="btn" data-aller="q1">Commencer, c'est gratuit</button>
+      <p class="note">3 questions · 1 minute · sans inscription</p>
+    </div>
+
+    <svg class="illus" viewBox="0 0 340 170" role="img" aria-label="Une valise ouverte avec un body de bébé et une liste cochée">
+      <rect x="40" y="58" width="260" height="104" rx="18" fill="#2F4A3A"/>
+      <path d="M40 98h260" stroke="#B8643C" stroke-width="3" stroke-dasharray="6 5"/>
+      <path d="M140 58V44a10 10 0 0 1 10-10h40a10 10 0 0 1 10 10v14" fill="none" stroke="#2F4A3A" stroke-width="8"/>
+      <g transform="translate(70 20)"><path d="M18 0h24l14 12-9 10-7-5v41H20V17l-7 5-9-10z" fill="#F6F1EA" stroke="#B8643C" stroke-width="2.5" stroke-linejoin="round"/></g>
+      <g transform="translate(200 6)"><rect width="84" height="104" rx="8" fill="#FFFDF9" stroke="#DCD3C8" stroke-width="2" transform="rotate(6)"/>
+        <g transform="rotate(6)" stroke-linecap="round"><path d="M14 22l5 5 9-10" stroke="#2F4A3A" stroke-width="3" fill="none"/><path d="M36 22h34" stroke="#DCD3C8" stroke-width="5"/><path d="M14 48l5 5 9-10" stroke="#2F4A3A" stroke-width="3" fill="none"/><path d="M36 48h28" stroke="#DCD3C8" stroke-width="5"/><rect x="14" y="68" width="14" height="14" rx="3" fill="none" stroke="#B8643C" stroke-width="2.5"/><path d="M36 75h32" stroke="#DCD3C8" stroke-width="5"/></g></g>
+    </svg>
+
+    <div class="douleur">
+      Les listes en ligne se contredisent et oublient ce qui change tout. Tu y passes <strong>des heures</strong>, et l'oubli, tu le découvres le jour J, quand il est trop tard pour aller l'acheter.
+    </div>
+
+    <ul class="benefices">
+      <li><span class="puce">1</span><div><strong>Faite pour ta situation.</strong> Bébé d'hiver ou d'été, césarienne ou voie basse, sein ou biberon : ta liste n'a que ce qu'il te faut.</div></li>
+      <li><span class="puce">2</span><div><strong>À cocher sur ton téléphone.</strong> Tu prépares la valise au fil des semaines, ta progression reste enregistrée.</div></li>
+      <li><span class="puce">3</span><div><strong>Une partie pour ton accompagnant.</strong> Tu lui envoies sa liste en un geste, il ou elle n'oublie rien non plus.</div></li>
+    </ul>
+    <button class="btn" data-aller="q1">Commencer, c'est gratuit</button>
+  </section>
+
+  <!-- 2. Trois questions -->
+  <section class="etape question" id="q1">
+    <div class="progression" aria-hidden="true"><span class="ok"></span><span></span><span></span></div>
+    <p class="compteur">Question 1 sur 3</p>
+    <h2>Ton terme tombe à quelle saison ?</h2>
+    <p class="pourquoi">Un bébé de janvier et un bébé d'août ne rentrent pas à la maison avec la même tenue. La plupart des listes n'en tiennent pas compte.</p>
+    <button class="choix" data-cle="s" data-val="hiver">En hiver (décembre à février)</button>
+    <button class="choix" data-cle="s" data-val="ete">En été (juin à août)</button>
+    <button class="choix" data-cle="s" data-val="mi">Au printemps ou à l'automne</button>
+    <button class="retour" data-aller="accueil">Retour</button>
+  </section>
+
+  <section class="etape question" id="q2">
+    <div class="progression" aria-hidden="true"><span class="ok"></span><span class="ok"></span><span></span></div>
+    <p class="compteur">Question 2 sur 3</p>
+    <h2>Une césarienne est-elle prévue ?</h2>
+    <p class="pourquoi">Après une césarienne, certaines affaires deviennent indispensables, d'autres te gêneraient. Rares sont les listes qui font la différence.</p>
+    <button class="choix" data-cle="c" data-val="non">Non, un accouchement par voie basse</button>
+    <button class="choix" data-cle="c" data-val="oui">Oui, elle est programmée</button>
+    <button class="choix" data-cle="c" data-val="nsp">Je ne sais pas encore</button>
+    <button class="retour" data-aller="q1">Retour</button>
+  </section>
+
+  <section class="etape question" id="q3">
+    <div class="progression" aria-hidden="true"><span class="ok"></span><span class="ok"></span><span class="ok"></span></div>
+    <p class="compteur">Question 3 sur 3</p>
+    <h2>Comment comptes-tu nourrir bébé ?</h2>
+    <p class="pourquoi">Sein ou biberon, la valise n'est pas la même. Et si tu hésites encore, il faut prévoir un peu des deux.</p>
+    <button class="choix" data-cle="a" data-val="sein">Au sein</button>
+    <button class="choix" data-cle="a" data-val="bib">Au biberon</button>
+    <button class="choix" data-cle="a" data-val="nsp">Je ne sais pas encore</button>
+    <button class="retour" data-aller="q2">Retour</button>
+  </section>
+
+  <!-- 3. Résultat personnalisé -->
+  <section class="etape" id="resultat">
+    <p class="compteur">Ton résultat</p>
+    <p class="chiffre"><span data-total></span> affaires</p>
+    <h2 style="margin-top:8px">à prévoir pour ta naissance.</h2>
+    <p style="margin-top:10px"><strong><span data-perso></span> d'entre elles</strong> viennent de ta situation :</p>
+    <div class="etiquettes" data-etiquettes></div>
+    <div class="carte compare">
+      <div class="avant"><strong>Avec une liste trouvée en ligne</strong><br>Elle est la même pour toutes et ignore ta situation : <span data-situation></span>. Ce qui manque le jour J, ton accompagnant court l'acheter à la pharmacie de l'hôpital, au prix fort, ou tu t'en passes.</div>
+      <div class="apres"><strong>Avec ta liste</strong><br>Tout est au même endroit, trié et à cocher. Tu fermes la valise l'esprit tranquille, des semaines avant le terme.</div>
+    </div>
+    <button class="btn" data-aller="apercu">Voir ma liste</button>
+  </section>
+
+  <!-- 4. Avant-goût gratuit -->
+  <section class="etape" id="apercu">
+    <p class="compteur">Ta liste · aperçu gratuit</p>
+    <h2>Commence par le sac du jour J</h2>
+    <p style="color:var(--gris);margin-top:6px">Cette partie est à toi, gratuitement. Tu peux déjà cocher.</p>
+    <div class="section-liste" data-jourj></div>
+    <hr class="surpiqure">
+    <h3>Le reste de ta liste</h3>
+    <div data-verrous></div>
+    <button class="btn" data-aller="paywall">Débloquer toute ma liste</button>
+  </section>
+
+  <!-- 5. Paywall -->
+  <section class="etape paywall" id="paywall">
+    <p class="compteur">Ta liste est prête</p>
+    <h2>Voilà ta liste, prête. Il ne reste qu'à la débloquer.</h2>
+    <p style="margin-top:8px"><strong data-total-txt></strong> affaires triées en 5 rubriques, dont <strong data-perso-txt></strong> choisies pour toi :</p>
+    <div class="etiquettes" data-etiquettes></div>
+    <p style="font-size:.95rem">9 €, c'est moins qu'un paquet de couches, et moins que le premier oubli racheté en urgence à la maternité.</p>
+
+    <div class="offre">
+      <span class="ruban">Accès immédiat</span>
+      <h3>Ma liste complète</h3>
+      <p class="prix" style="margin-top:10px">9 € <small>une seule fois</small></p>
+      <ul class="inclus">
+        <li>Les 5 rubriques et les <span data-total></span> affaires, adaptées à toi</li>
+        <li>À cocher sur ton téléphone, ta progression est enregistrée</li>
+        <li>À envoyer à ton accompagnant, à imprimer ou en PDF</li>
+      </ul>
+      <div class="garantie">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 3l12 5v9c0 8-5.5 13-12 16C11.5 30 6 25 6 17V8z" fill="#2F4A3A"/><path d="M12 18l4 4 8-9" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        <div><strong>Satisfaite ou remboursée pendant 30 jours.</strong> Un simple email à <span class="a-completer">[TON-EMAIL]</span> avec l'adresse utilisée pour payer suffit, sans justification. Remboursement sous 5 jours ouvrés.</div>
+      </div>
+      <a class="btn" id="payer" href="COLLE-ICI-TON-LIEN-STRIPE" rel="noopener">Débloquer ma liste · 9 €</a>
+      <p class="note">Paiement unique, sans abonnement · Paiement sécurisé par Stripe<br>Accès immédiat juste après le paiement</p>
+    </div>
+
+    <div class="faq">
+      <h3 style="margin:24px 0 4px">Tes questions</h3>
+      <details><summary>Est-ce que ça marche pour mon cas ?</summary><p>Tes 3 réponses adaptent la liste : saison, césarienne ou non, sein ou biberon. Si tu changes d'avis, tu modifies tes réponses et la liste se met à jour. Tu attends des jumeaux ? Double simplement les quantités de la partie bébé. Et compare toujours avec la liste fournie par ta maternité : chaque établissement a ses habitudes.</p></details>
+      <details><summary>Combien de temps ça me prend ?</summary><p>5 minutes pour la parcourir. Ensuite tu coches au fil de tes préparatifs, à ton rythme : ta progression est gardée sur ton téléphone.</p></details>
+      <details><summary>Et si ça ne me convient pas ?</summary><p>Tu es remboursée. Pendant 30 jours, un email suffit, sans justification, et l'argent revient sous 5 jours ouvrés. C'est un paiement unique : il n'y a aucun abonnement à résilier.</p></details>
+      <details><summary>À quoi sert exactement ce que je paie ?</summary><p>À débloquer immédiatement ta liste complète : les 5 rubriques (jour J, toi, bébé, ton accompagnant, le retour à la maison), adaptées à ta situation, à cocher, à partager et à imprimer. Tu la gardes.</p></details>
+    </div>
+    <div style="margin-top:22px"><a class="btn" href="COLLE-ICI-TON-LIEN-STRIPE" rel="noopener">Débloquer ma liste · 9 €</a><p class="note">Satisfaite ou remboursée 30 jours · Sans abonnement</p></div>
+    <button class="retour" data-aller="apercu">Revenir à l'aperçu</button>
+  </section>
+
+  <footer>
+    <nav><a href="/mentions-legales">Mentions légales</a><a href="/cgv">Conditions de vente</a><a href="/confidentialite">Confidentialité</a></nav>
+    <p>Cette liste est un aide-mémoire. Elle ne remplace pas les conseils de ta sage-femme, de ton médecin ou de ta maternité.</p>
+  </footer>
+</div>
+
+<script>
+// Tags de chaque affaire (sans le texte) : [rubrique, condition]
+const TAGS = [["jourj",{}],["jourj",{}],["jourj",{}],["jourj",{}],["jourj",{}],["jourj",{}],["jourj",{}],["jourj",{}],["jourj",{}],["jourj",{"s":["hiver"]}],["jourj",{"s":["mi"]}],["jourj",{}],["toi",{}],["toi",{}],["toi",{}],["toi",{}],["toi",{"c":["oui","nsp"]}],["toi",{"c":["oui","nsp"]}],["toi",{"c":["oui","nsp"]}],["toi",{"c":["oui","nsp"]}],["toi",{}],["toi",{}],["toi",{"a":["sein","nsp"]}],["toi",{"a":["sein","nsp"]}],["toi",{"a":["sein"]}],["toi",{"a":["sein"]}],["toi",{"a":["bib"]}],["toi",{"a":["bib","nsp"]}],["toi",{}],["toi",{}],["toi",{"s":["hiver"]}],["toi",{"s":["ete"]}],["bebe",{}],["bebe",{}],["bebe",{}],["bebe",{}],["bebe",{}],["bebe",{}],["bebe",{}],["bebe",{}],["bebe",{}],["bebe",{"s":["hiver"]}],["bebe",{"s":["hiver"]}],["bebe",{"s":["ete"]}],["bebe",{"s":["mi"]}],["bebe",{}],["accomp",{}],["accomp",{}],["accomp",{}],["accomp",{}],["accomp",{}],["accomp",{}],["maison",{}],["maison",{}],["maison",{}],["maison",{}],["maison",{"a":["bib"]}],["maison",{"a":["sein"]}],["maison",{}],["maison",{}],["maison",{"c":["oui","nsp"]}],["maison",{"s":["hiver"]}],["maison",{"s":["ete"]}]];
+const JOURJ = [{"id":"jourj-0","t":"Dossier de maternité, carte Vitale, carte de mutuelle, pièce d'identité","cond":{}},{"id":"jourj-1","t":"Ton projet de naissance, si tu en as rédigé un","cond":{}},{"id":"jourj-2","t":"Un grand t-shirt ou une chemise de nuit que tu peux salir","cond":{}},{"id":"jourj-3","t":"Des chaussettes chaudes (on a souvent froid aux pieds)","cond":{}},{"id":"jourj-4","t":"Un brumisateur et un baume à lèvres","cond":{}},{"id":"jourj-5","t":"Un élastique ou une pince à cheveux","cond":{}},{"id":"jourj-6","t":"Une bouteille d'eau et des en-cas (vérifie ce que ta maternité autorise)","cond":{}},{"id":"jourj-7","t":"Un chargeur de téléphone avec un câble long","cond":{}},{"id":"jourj-8","t":"La première tenue de bébé : body, pyjama, bonnet, chaussettes","cond":{}},{"id":"jourj-9","t":"Une tenue de naissance plus chaude pour bébé","cond":{"s":["hiver"]}},{"id":"jourj-10","t":"Une petite couverture ou un lange en plus pour bébé","cond":{"s":["mi"]}},{"id":"jourj-11","t":"Une playlist ou une enceinte (facultatif)","cond":{}}];
+const TITRES = {"jourj":"Le jour J, en salle de naissance","toi":"Pour toi, pendant le séjour","bebe":"Pour bébé, pendant le séjour","accomp":"Pour la personne qui t'accompagne","maison":"À préparer pour le retour à la maison"};
+const LIBELLES = {
+  s:{hiver:"bébé d'hiver", ete:"bébé d'été", mi:"bébé de mi-saison"},
+  c:{oui:"césarienne programmée", non:"voie basse", nsp:"césarienne possible"},
+  a:{sein:"allaitement au sein", bib:"biberon", nsp:"sein ou biberon, à décider"}
+};
+const CLE = "mvm-reponses";
+let rep = {};
+try { rep = JSON.parse(localStorage.getItem(CLE) || "{}"); } catch(e) {}
+
+function garde(){ try { localStorage.setItem(CLE, JSON.stringify(rep)); } catch(e) {} }
+function ok(cond){ return Object.keys(cond).every(k => cond[k].includes(rep[k])); }
+function estPerso(cond){ return Object.keys(cond).length > 0; }
+
+function aller(id){
+  document.querySelectorAll(".etape").forEach(e => e.classList.toggle("active", e.id === id));
+  if (["resultat","apercu","paywall"].includes(id)) remplir();
+  window.scrollTo(0,0);
+  if (location.hash.slice(1) !== id) history.pushState(null, "", id === "accueil" ? location.pathname : "#" + id);
+}
+window.addEventListener("popstate", () => aller(location.hash.slice(1) || "accueil"));
+
+document.addEventListener("click", ev => {
+  const b = ev.target.closest("[data-aller]");
+  if (b) { aller(b.dataset.aller); return; }
+  const c = ev.target.closest(".choix");
+  if (c) {
+    rep[c.dataset.cle] = c.dataset.val; garde();
+    c.parentElement.querySelectorAll(".choix").forEach(x => x.classList.toggle("pris", x === c));
+    const suite = {s:"q2", c:"q3", a:"resultat"}[c.dataset.cle];
+    setTimeout(() => aller(suite), 180);
+  }
+});
+
+function remplir(){
+  if (!rep.s || !rep.c || !rep.a) { aller("q1"); return; }
+  const actifs = TAGS.filter(t => ok(t[1]));
+  const total = actifs.length;
+  const perso = actifs.filter(t => estPerso(t[1])).length;
+  document.querySelectorAll("[data-total]").forEach(e => e.textContent = total);
+  document.querySelectorAll("[data-perso]").forEach(e => e.textContent = perso);
+  document.querySelectorAll("[data-total-txt]").forEach(e => e.textContent = total);
+  document.querySelectorAll("[data-perso-txt]").forEach(e => e.textContent = perso);
+  const etiq = ["s","c","a"].map(k => '<span class="etiquette">' + LIBELLES[k][rep[k]] + '</span>').join("");
+  document.querySelectorAll("[data-etiquettes]").forEach(e => e.innerHTML = etiq);
+  document.querySelector("[data-situation]").textContent = [LIBELLES.s[rep.s], LIBELLES.c[rep.c], LIBELLES.a[rep.a]].join(", ");
+
+  // Aperçu : la rubrique du jour J, vraiment utilisable
+  const coches = lireCoches();
+  const jj = JOURJ.filter(i => ok(i.cond));
+  document.querySelector("[data-jourj]").innerHTML =
+    '<h3>' + TITRES.jourj + ' <small>' + jj.length + ' affaires</small></h3>' +
+    jj.map(i => '<label class="case"><input type="checkbox" data-id="' + i.id + '"' + (coches[i.id] ? " checked" : "") + '><span>' + i.t +
+      (estPerso(i.cond) ? '<span class="perso">pour toi</span>' : '') + '</span></label>').join("");
+
+  // Le reste, visible mais verrouillé
+  const autres = ["toi","bebe","accomp","maison"];
+  document.querySelector("[data-verrous]").innerHTML = autres.map(r => {
+    const n = actifs.filter(t => t[0] === r).length;
+    const p = actifs.filter(t => t[0] === r && estPerso(t[1])).length;
+    const lignes = Array.from({length: Math.min(n, 4)}, (_, i) => '<div class="ligne" style="width:' + (55 + (i * 13) % 40) + '%"></div>').join("");
+    return '<div class="verrou"><span class="badge">Verrouillé</span><h3 style="padding-right:96px">' + TITRES[r] + '</h3>' +
+      '<p style="color:var(--gris);font-size:.95rem">' + n + ' affaires' + (p ? ', dont ' + p + ' pour ta situation' : '') + '</p>' +
+      '<div class="floue" aria-hidden="true">' + lignes + '</div></div>';
+  }).join("");
+}
+
+function lireCoches(){ try { return JSON.parse(localStorage.getItem("mvm-coches") || "{}"); } catch(e) { return {}; } }
+document.addEventListener("change", ev => {
+  if (ev.target.matches("input[data-id]")) {
+    const c = lireCoches(); c[ev.target.dataset.id] = ev.target.checked;
+    try { localStorage.setItem("mvm-coches", JSON.stringify(c)); } catch(e) {}
+  }
+});
+
+// Ouverture directe sur une étape (lien partagé, retour arrière)
+const depart = location.hash.slice(1);
+if (depart && document.getElementById(depart)) aller(depart);
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

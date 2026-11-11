@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ma liste complète | Ma Valise Maternité</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2F4A3A">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Ma liste de valise de maternité">
+<meta property="og:description" content="Ma liste de maternité, adaptée à ma situation.">
+<meta property="og:image" content="https://ma-valise-maternite.vercel.app/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+  .reglages{display:grid;gap:10px;margin:14px 0}
+  .reglages label{font-weight:700;font-size:.95rem}
+  .reglages select{width:100%;min-height:52px;padding:10px 12px;border:2px solid var(--trait);border-radius:12px;background:var(--papier);font-family:var(--texte);font-size:1rem;color:var(--encre)}
+  .barre{height:10px;border-radius:5px;background:var(--trait);overflow:hidden;margin:8px 0 4px}
+  .barre span{display:block;height:100%;background:var(--sauge);width:0;transition:width .3s}
+  .actions{display:grid;gap:10px;margin:18px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="marque" href="/" aria-label="Ma Valise Maternité, accueil">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="10" width="24" height="17" rx="5" fill="#2F4A3A"/><path d="M12 10V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3" fill="none" stroke="#2F4A3A" stroke-width="2.5"/><path d="M4 17h24" stroke="#B8643C" stroke-width="2" stroke-dasharray="2 2"/></svg>
+    Ma Valise Maternité
+  </a>
+
+  <div class="carte sauge no-print">
+    <h3>Merci, ta liste complète est débloquée.</h3>
+    <p style="margin-top:6px">Ajoute cette page à tes favoris pour la retrouver. Tu reçois aussi ton reçu de paiement par email.</p>
+  </div>
+
+  <h1 style="margin:18px 0 6px">Ma valise de maternité</h1>
+  <p data-resume style="color:var(--gris)"></p>
+  <div class="barre no-print" aria-hidden="true"><span data-barre></span></div>
+  <p class="no-print" style="font-size:.95rem"><strong data-faits>0</strong> sur <span data-total>0</span> affaires prêtes</p>
+
+  <details class="carte no-print">
+    <summary style="font-weight:700;cursor:pointer">Modifier ma situation</summary>
+    <div class="reglages">
+      <label for="s">Saison du terme</label>
+      <select id="s"><option value="hiver">En hiver</option><option value="ete">En été</option><option value="mi">Au printemps ou à l'automne</option></select>
+      <label for="c">Césarienne</label>
+      <select id="c"><option value="non">Non, voie basse</option><option value="oui">Oui, programmée</option><option value="nsp">Je ne sais pas encore</option></select>
+      <label for="a">Alimentation de bébé</label>
+      <select id="a"><option value="sein">Au sein</option><option value="bib">Au biberon</option><option value="nsp">Je ne sais pas encore</option></select>
+    </div>
+  </details>
+
+  <div data-liste></div>
+
+  <div class="actions no-print">
+    <button class="btn" id="partager">Envoyer sa partie à mon accompagnant</button>
+    <button class="btn btn-sec" onclick="window.print()">Imprimer ou enregistrer en PDF</button>
+  </div>
+  <p class="note no-print">Un souci ? Écris à <span class="a-completer">[TON-EMAIL]</span>. Satisfaite ou remboursée pendant 30 jours.</p>
+
+  <footer>
+    <nav><a href="/mentions-legales">Mentions légales</a><a href="/cgv">Conditions de vente</a><a href="/confidentialite">Confidentialité</a></nav>
+    <p>Cette liste est un aide-mémoire. Elle ne remplace pas les conseils de ta sage-femme, de ton médecin ou de ta maternité. Compare-la avec la liste de ta maternité.</p>
+  </footer>
+</div>
+<script>
+const SECTIONS = [{"id":"jourj","titre":"Le jour J, en salle de naissance","intro":"Un petit sac à part, prêt à attraper en partant.","items":[{"id":"jourj-0","t":"Dossier de maternité, carte Vitale, carte de mutuelle, pièce d'identité","cond":{}},{"id":"jourj-1","t":"Ton projet de naissance, si tu en as rédigé un","cond":{}},{"id":"jourj-2","t":"Un grand t-shirt ou une chemise de nuit que tu peux salir","cond":{}},{"id":"jourj-3","t":"Des chaussettes chaudes (on a souvent froid aux pieds)","cond":{}},{"id":"jourj-4","t":"Un brumisateur et un baume à lèvres","cond":{}},{"id":"jourj-5","t":"Un élastique ou une pince à cheveux","cond":{}},{"id":"jourj-6","t":"Une bouteille d'eau et des en-cas (vérifie ce que ta maternité autorise)","cond":{}},{"id":"jourj-7","t":"Un chargeur de téléphone avec un câble long","cond":{}},{"id":"jourj-8","t":"La première tenue de bébé : body, pyjama, bonnet, chaussettes","cond":{}},{"id":"jourj-9","t":"Une tenue de naissance plus chaude pour bébé","cond":{"s":["hiver"]}},{"id":"jourj-10","t":"Une petite couverture ou un lange en plus pour bébé","cond":{"s":["mi"]}},{"id":"jourj-11","t":"Une playlist ou une enceinte (facultatif)","cond":{}}]},{"id":"toi","titre":"Pour toi, pendant le séjour","intro":"Compte 3 à 5 jours de séjour.","items":[{"id":"toi-0","t":"3 ou 4 tenues confortables (pyjamas, leggings, t-shirts larges)","cond":{}},{"id":"toi-1","t":"Un peignoir ou un gilet chaud","cond":{}},{"id":"toi-2","t":"Des chaussons et des tongs pour la douche","cond":{}},{"id":"toi-3","t":"Une dizaine de culottes jetables ou en coton","cond":{}},{"id":"toi-4","t":"Des culottes taille haute qui ne frottent pas la cicatrice","cond":{"c":["oui","nsp"]}},{"id":"toi-5","t":"Des vêtements amples qui s'enfilent sans te pencher","cond":{"c":["oui","nsp"]}},{"id":"toi-6","t":"Des chaussons sans lacets, à enfiler debout","cond":{"c":["oui","nsp"]}},{"id":"toi-7","t":"Demande à ta maternité si une ceinture de maintien est conseillée","cond":{"c":["oui","nsp"]}},{"id":"toi-8","t":"2 paquets de serviettes hygiéniques spéciales maternité","cond":{}},{"id":"toi-9","t":"Ta trousse de toilette et une serviette de bain","cond":{}},{"id":"toi-10","t":"2 soutiens-gorge d'allaitement","cond":{"a":["sein","nsp"]}},{"id":"toi-11","t":"Des coussinets d'allaitement","cond":{"a":["sein","nsp"]}},{"id":"toi-12","t":"Une crème pour les mamelons","cond":{"a":["sein"]}},{"id":"toi-13","t":"Un coussin d'allaitement (facultatif, mais il soulage le dos)","cond":{"a":["sein"]}},{"id":"toi-14","t":"Un soutien-gorge confortable qui maintient bien","cond":{"a":["bib"]}},{"id":"toi-15","t":"Demande à ta maternité si les biberons et le lait sont fournis","cond":{"a":["bib","nsp"]}},{"id":"toi-16","t":"Des bouchons d'oreilles et un masque de nuit","cond":{}},{"id":"toi-17","t":"Une tenue de sortie souple : ton ventre sera encore là, c'est normal","cond":{}},{"id":"toi-18","t":"Une veste chaude et un bonnet pour la sortie","cond":{"s":["hiver"]}},{"id":"toi-19","t":"Un éventail ou un petit ventilateur à piles","cond":{"s":["ete"]}}]},{"id":"bebe","titre":"Pour bébé, pendant le séjour","intro":"Prends des tailles naissance ET 1 mois : on ne sait jamais.","items":[{"id":"bebe-0","t":"6 bodies","cond":{}},{"id":"bebe-1","t":"6 pyjamas","cond":{}},{"id":"bebe-2","t":"2 gilets","cond":{}},{"id":"bebe-3","t":"Un bonnet en coton","cond":{}},{"id":"bebe-4","t":"3 paires de chaussettes ou de chaussons","cond":{}},{"id":"bebe-5","t":"Une gigoteuse (demande si la maternité en fournit)","cond":{}},{"id":"bebe-6","t":"3 à 6 langes en coton","cond":{}},{"id":"bebe-7","t":"Des couches taille 1 (vérifie si la maternité les fournit)","cond":{}},{"id":"bebe-8","t":"2 ou 3 bavoirs","cond":{}},{"id":"bebe-9","t":"Une combinaison chaude ou un nid d'ange pour la sortie","cond":{"s":["hiver"]}},{"id":"bebe-10","t":"Une couverture chaude pour le trajet","cond":{"s":["hiver"]}},{"id":"bebe-11","t":"Des bodies à manches courtes et un voile de coton","cond":{"s":["ete"]}},{"id":"bebe-12","t":"Un gilet épais et une couverture légère pour la sortie","cond":{"s":["mi"]}},{"id":"bebe-13","t":"Le siège auto (coque) installé dans la voiture AVANT le jour J","cond":{}}]},{"id":"accomp","titre":"Pour la personne qui t'accompagne","intro":"À lui ou à elle de préparer son sac : envoie-lui cette partie.","items":[{"id":"accomp-0","t":"Une tenue de rechange et une trousse de toilette","cond":{}},{"id":"accomp-1","t":"Des en-cas et un peu de monnaie pour les distributeurs","cond":{}},{"id":"accomp-2","t":"Un chargeur et une batterie externe","cond":{}},{"id":"accomp-3","t":"Le livret de famille si vous en avez un, pour déclarer la naissance","cond":{}},{"id":"accomp-4","t":"Noter : la naissance se déclare à la mairie dans les 5 jours","cond":{}},{"id":"accomp-5","t":"Savoir où se garer à la maternité, de jour comme de nuit","cond":{}}]},{"id":"maison","titre":"À préparer pour le retour à la maison","intro":"Pour que les premiers jours soient doux.","items":[{"id":"maison-0","t":"Le lit ou le berceau prêt, avec un matelas ferme et sans tour de lit","cond":{}},{"id":"maison-1","t":"Un matelas à langer et de quoi faire la toilette","cond":{}},{"id":"maison-2","t":"Un thermomètre","cond":{}},{"id":"maison-3","t":"Du sérum physiologique et des compresses","cond":{}},{"id":"maison-4","t":"Des biberons, un goupillon et le lait choisi avec la maternité","cond":{"a":["bib"]}},{"id":"maison-5","t":"Renseigne-toi sur la location d'un tire-lait en pharmacie","cond":{"a":["sein"]}},{"id":"maison-6","t":"Des repas prêts au congélateur pour la première semaine","cond":{}},{"id":"maison-7","t":"Le numéro d'une sage-femme pour le suivi à domicile","cond":{}},{"id":"maison-8","t":"Quelqu'un pour t'aider les premiers jours (courses, linge)","cond":{"c":["oui","nsp"]}},{"id":"maison-9","t":"Un humidificateur ou un bol d'eau près du radiateur","cond":{"s":["hiver"]}},{"id":"maison-10","t":"Des volets ou rideaux occultants pour garder la chambre au frais","cond":{"s":["ete"]}}]}];
+const LIBELLES = {
+  s:{hiver:"bébé d'hiver", ete:"bébé d'été", mi:"bébé de mi-saison"},
+  c:{oui:"césarienne programmée", non:"voie basse", nsp:"césarienne possible"},
+  a:{sein:"allaitement au sein", bib:"biberon", nsp:"sein ou biberon, à décider"}
+};
+function lire(k, d){ try { return JSON.parse(localStorage.getItem(k) || d); } catch(e) { return JSON.parse(d); } }
+function ecrire(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e) {} }
+let rep = Object.assign({s:"mi", c:"nsp", a:"nsp"}, lire("mvm-reponses", "{}"));
+let coches = lire("mvm-coches", "{}");
+const ok = cond => Object.keys(cond).every(k => cond[k].includes(rep[k]));
+
+function afficher(){
+  ["s","c","a"].forEach(k => document.getElementById(k).value = rep[k]);
+  document.querySelector("[data-resume]").textContent = "Adaptée à ta situation : " + ["s","c","a"].map(k => LIBELLES[k][rep[k]]).join(" · ");
+  let total = 0;
+  document.querySelector("[data-liste]").innerHTML = SECTIONS.map(sec => {
+    const items = sec.items.filter(i => ok(i.cond));
+    total += items.length;
+    return '<div class="section-liste"><hr class="surpiqure"><h3>' + sec.titre + ' <small>' + items.length + ' affaires</small></h3><p class="intro">' + sec.intro + '</p>' +
+      items.map(i => '<label class="case"><input type="checkbox" data-id="' + i.id + '"' + (coches[i.id] ? " checked" : "") + '><span>' + i.t +
+        (Object.keys(i.cond).length ? '<span class="perso">pour toi</span>' : '') + '</span></label>').join("") + '</div>';
+  }).join("");
+  document.querySelector("[data-total]").textContent = total;
+  progression(total);
+}
+function progression(total){
+  total = total || +document.querySelector("[data-total]").textContent;
+  const faits = document.querySelectorAll("[data-liste] input:checked").length;
+  document.querySelector("[data-faits]").textContent = faits;
+  document.querySelector("[data-barre]").style.width = (total ? faits / total * 100 : 0) + "%";
+}
+document.addEventListener("change", ev => {
+  if (ev.target.matches("input[data-id]")) { coches[ev.target.dataset.id] = ev.target.checked; ecrire("mvm-coches", coches); progression(); }
+  if (ev.target.matches("select")) { rep[ev.target.id] = ev.target.value; ecrire("mvm-reponses", rep); afficher(); }
+});
+document.getElementById("partager").addEventListener("click", async () => {
+  const sec = SECTIONS.find(s => s.id === "accomp");
+  const texte = "Ta liste pour la maternité :\n" + sec.items.filter(i => ok(i.cond)).map(i => "☐ " + i.t).join("\n");
+  if (navigator.share) { try { await navigator.share({ title: "Ta liste pour la maternité", text: texte }); } catch(e) {} }
+  else { location.href = "mailto:?subject=" + encodeURIComponent("Ta liste pour la maternité") + "&body=" + encodeURIComponent(texte); }
+});
+afficher();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
